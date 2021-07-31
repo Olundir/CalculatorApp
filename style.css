@@ -1,0 +1,242 @@
+:root {
+  font-size: 10px;
+}
+/* Body */
+body {
+  font-size: 3.2rem;
+  font-family: "Spartan", sans-serif;
+}
+
+.bodyTheme1 {
+  background-color: hsl(222, 26%, 31%);
+}
+.bodyTheme2 {
+}
+.bodyTheme3 {
+}
+
+/* main */
+
+main {
+  padding: 0 3rem;
+}
+
+/* Nav */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10rem;
+  text-align: center;
+}
+.navText {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  width: 11rem;
+}
+.switchContainer {
+  display: flex;
+  flex-direction: column;
+  width: 6rem;
+  align-items: center;
+}
+.toggleNumbers {
+  display: flex;
+  justify-content: space-between;
+  width: 4.5rem;
+}
+
+.toggleContainer {
+  width: 6rem;
+  height: 2.25rem;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.toggle {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  position: relative;
+  top: 0.3rem;
+  left: 0.4rem;
+}
+h2 {
+  position: relative;
+  top: 2rem;
+  right: 2rem;
+}
+h4 {
+  position: relative;
+  bottom: 0.75rem;
+}
+
+.toggleCTheme1 {
+  background-color: hsl(223, 31%, 20%);
+}
+.toggleCTheme2 {
+}
+.toggleCTheme3 {
+}
+
+.toggleTheme1 {
+  background-color: hsl(6, 63%, 50%);
+}
+.toggleTheme2 {
+}
+.toggleTheme3 {
+}
+.navTheme1 {
+  color: hsl(0, 0%, 100%);
+}
+.navTheme2 {
+}
+.navTheme3 {
+}
+
+/* Theme Switch Animation*/
+
+/* Screen */
+.resultScreenContainer {
+  text-align: right;
+  height: 7rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+.result {
+  padding: 2rem;
+}
+
+.screenTheme1 {
+  background-color: hsl(224, 36%, 15%);
+  color: hsl(0, 0%, 100%);
+}
+.screenTheme2 {
+  background-color: hsl(0, 0%, 93%);
+}
+.screenTheme3 {
+}
+
+/* Keypad */
+
+.keypad {
+  border-radius: 1rem;
+}
+
+.keypadContainer {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+
+  row-gap: 2rem;
+}
+
+/* Tiles that are squares  */
+
+.tile {
+  background-color: hsl(30, 25%, 89%);
+  line-height: 6.5rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0.5rem;
+  justify-self: center;
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+}
+.innerDELTheme1 {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 1.75rem;
+  line-height: 6.5rem;
+  background-color: hsl(225, 21%, 49%);
+}
+
+.shadowTheme1 {
+  position: absolute;
+  background-color: hsl(28, 16%, 65%);
+  padding-bottom: 0.4rem;
+  z-index: 1;
+}
+.shadowDELTheme1 {
+  position: absolute;
+  background-color: hsl(224, 28%, 35%);
+  padding-bottom: 0.4rem;
+  z-index: 1;
+}
+
+.keypadTheme1 {
+  background-color: hsl(223, 31%, 20%);
+  color: hsl(221, 14%, 31%);
+}
+.deleteTheme1 {
+  color: hsl(0, 0%, 100%);
+}
+.keypadTheme2 {
+}
+.deleteTheme2 {
+}
+.keypadTheme3 {
+}
+.deleteTheme3 {
+}
+/* Buttons */
+
+.re {
+  grid-column-start: -5;
+  grid-column-end: -3;
+}
+.eq {
+  grid-column-start: -3;
+  grid-column-end: -1;
+}
+.buttons {
+  font-size: 1.75;
+  width: 14rem;
+  height: 6rem;
+  justify-self: center;
+}
+
+.btn {
+  position: relative;
+  width: 14rem;
+  height: 6rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.75rem;
+  font-family: "Spartan", sans-serif;
+  color: white;
+  z-index: 2;
+}
+
+.reset {
+  background-color: hsl(225, 21%, 49%);
+}
+.equals {
+  background-color: hsl(6, 63%, 50%);
+}
+
+.resetShadowTheme1 {
+  position: absolute;
+  background-color: hsl(224, 28%, 35%);
+  padding-bottom: 0.4rem;
+  z-index: 1;
+}
+.equalsShadowTheme1 {
+  position: absolute;
+  background-color: hsl(6, 70%, 34%);
+  padding-bottom: 0.4rem;
+  z-index: 1;
+}
+
+/* Attribution */
+.attribution {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+}

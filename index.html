@@ -9,60 +9,102 @@
     <link rel="stylesheet" href="style.css" />
     <title>Calculator App</title>
   </head>
-  <body>
+  <body class="bodyTheme1">
     <main>
-      <div class="section">
+      <nav class="navTheme1">
         <h1>calc</h1>
-        <div>
+        <div class="navText">
           <h2>THEME</h2>
           <div class="switchContainer">
-            <h4>1</h4>
-            <h4>2</h4>
-            <h4>3</h4>
-            <div id="toggleContainer">
-              <div id="toggle"></div>
+            <div class="toggleNumbers">
+              <h4>1</h4>
+              <h4>2</h4>
+              <h4>3</h4>
+            </div>
+            <div class="toggleContainer toggleCTheme1">
+              <div class="toggle toggleTheme1"></div>
             </div>
           </div>
         </div>
+      </nav>
+      <div class="resultScreenContainer screenTheme1">
+        <div class="result">10000</div>
       </div>
-      <div class="section">
-        <input type="number" name="result" id="result" />
-      </div>
-      <div class="section">
-        <div class="tile digits">7</div>
-        <div class="tile shadow"></div>
-        <div class="tile digits">8</div>
-        <div class="tile shadow"></div>
-        <div class="tile digits">9</div>
-        <div class="tile shadow"></div>
-        <div class="tile delete">DEL</div>
-        <div class="tile shadow"></div>
-        <div class="tile digits">4</div>
-        <div class="tile shadow"></div>
-        <div class="tile digits">5</div>
-        <div class="tile shadow"></div>
-        <div class="tile digits">6</div>
-        <div class="tile shadow"></div>
-        <div class="tile plus">+</div>
-        <div class="tile shadow"></div>
-        <div class="tile digits">1</div>
-        <div class="tile shadow"></div>
-        <div class="tile digits">2</div>
-        <div class="tile shadow"></div>
-        <div class="tile digits">3</div>
-        <div class="tile shadow"></div>
-        <div class="tile minus">-</div>
-        <div class="tile shadow"></div>
-        <div class="tile dot">.</div>
-        <div class="tile shadow"></div>
-        <div class="tile digits">0</div>
-        <div class="tile shadow"></div>
-        <div class="tile divide">/</div>
-        <div class="tile shadow"></div>
-        <div class="tile multiply">x</div>
-        <div class="tile shadow"></div>
-        <button type="reset">RESET</button>
-        <button type="submit">=</button>
+      <div class="keypad keypadTheme1">
+        <div class="keypadContainer">
+          <div class="tile digits">
+            <div class="tile shadowTheme1"></div>
+            <div class="tile inner">7</div>
+          </div>
+          <div class="tile digits">
+            <div class="tile shadowTheme1"></div>
+            <div class="tile inner">8</div>
+          </div>
+          <div class="tile digits">
+            <div class="tile shadowTheme1"></div>
+            <div class="tile inner">9</div>
+          </div>
+          <div class="tile digits">
+            <div class="tile shadowDELTheme1"></div>
+            <div class="tile innerDELTheme1">DEL</div>
+          </div>
+          <div class="tile digits">
+            <div class="tile shadowTheme1"></div>
+            <div class="tile inner">4</div>
+          </div>
+          <div class="tile digits">
+            <div class="tile shadowTheme1"></div>
+            <div class="tile inner">5</div>
+          </div>
+          <div class="tile digits">
+            <div class="tile shadowTheme1"></div>
+            <div class="tile inner">6</div>
+          </div>
+          <div class="tile plus">
+            <div class="tile shadowTheme1"></div>
+            <div class="tile inner">+</div>
+          </div>
+          <div class="tile digits">
+            <div class="tile shadowTheme1"></div>
+            <div class="tile inner">1</div>
+          </div>
+          <div class="tile digits">
+            <div class="tile shadowTheme1"></div>
+            <div class="tile inner">2</div>
+          </div>
+          <div class="tile digits">
+            <div class="tile shadowTheme1"></div>
+            <div class="tile inner">3</div>
+          </div>
+          <div class="tile minus">
+            <div class="tile shadowTheme1"></div>
+            <div class="tile inner">-</div>
+          </div>
+          <div class="tile dot">
+            <div class="tile shadowTheme1"></div>
+            <div class="tile inner">.</div>
+          </div>
+          <div class="tile digits">
+            <div class="tile shadowTheme1"></div>
+            <div class="tile inner">0</div>
+          </div>
+          <div class="tile divide">
+            <div class="tile shadowTheme1"></div>
+            <div class="tile inner">/</div>
+          </div>
+          <div class="tile multiply">
+            <div class="tile shadowTheme1"></div>
+            <div class="tile inner">x</div>
+          </div>
+          <div class="re buttons">
+            <div class="resetShadowTheme1 btn"></div>
+            <button type="button" class="reset btn">RESET</button>
+          </div>
+          <div class="eq buttons">
+            <div class="equalsShadowTheme1 btn"></div>
+            <button type="button" class="equals btn">=</button>
+          </div>
+        </div>
       </div>
     </main>
     <div class="attribution">
