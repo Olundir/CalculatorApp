@@ -1,23 +1,5 @@
 const resultObject = document.querySelector(".result");
 const d = document.querySelectorAll(".d");
-const digits = [];
-for (const dig of d) {
-  digits.push(parseInt(dig.innerText));
-}
-const del = document.querySelector(".del");
-const plus = document.querySelector(".pl");
-const minus = document.querySelector(".min");
-const division = document.querySelector(".div");
-const multi = document.querySelector(".multi");
-const dot = document.querySelector(".dott");
-const equals = document.querySelector(".eql");
-const reset = document.querySelector(".res");
-
-//  7 8 9
-//  4 5 6
-//  1 2 3
-//    0
-// CALCULATOR LOGIC
 
 const keypad = document.querySelectorAll(".key");
 let res = 0;
@@ -26,14 +8,14 @@ for (key of keypad) {
     trigger = input.target.textContent;
     // what if text gets 2 long. For now just limit the input but later I can add the scroll
     // option for the result screen which would allow for infinite input
-    if (resultObject.textContent.length === 13) resultObject.classList.add("resultManyNb");
-    if (resultObject.textContent.length < 13) resultObject.classList.remove("resultManyNb");
+    // if (resultObject.textContent.length === 13) resultObject.classList.add("resultManyNb");
+    // if (resultObject.textContent.length < 13) resultObject.classList.remove("resultManyNb");
     // DEL
     if (trigger === "DEL") deleteLast();
     //RESET
     else if (trigger === "RESET") resetCalculator();
     // length max
-    else if (resultObject.textContent.length > 15) console.log("max length");
+    // else if (resultObject.textContent.length > 15) console.log("max length");
     // adds the instruction
     else if (trigger === "+" || trigger === "-" || trigger === "x" || trigger === "/") {
       addInstruction();
@@ -56,10 +38,26 @@ for (key of keypad) {
   });
 }
 
-// function that calculates the result based on the resultObject.textContent and
-// possibly the  current result
 const calculator = () => {
-  // if there is an Instruction at the end it has to ignore it
+  let equasion = resultObject.textContent.split(" ");
+  lgth = equasion.length;
+  console.log(equasion);
+  if (lgth < 2) {
+    addError();
+    console.log("invalid equasion");
+  } else if (lgth % 2 !== 0 && equasion[lgth - 1] === "") {
+    console.log("i have instruction at the end");
+    equasion.pop();
+    equasion.pop();
+    calc(equasion);
+  } else {
+    console.log("valid equasion");
+    calc(equasion);
+  }
+};
+
+const calc = (array) => {
+  resultObject.innerHTML = eval(array.toString().replaceAll(",", "").replaceAll("x", "*")).toFixed(2);
 };
 
 const addInstruction = () => {
@@ -86,7 +84,7 @@ const deleteLast = () => {
   else resultObject.textContent = resultObject.textContent.slice(0, resultObject.textContent.length - 1);
 };
 
-const addError = (name) => {
-  name.classList.add("error");
-  name.innerHTML = "ERROR";
+const addError = () => {
+  resultObject.classList.add("error");
+  resultObject.innerHTML = "ERROR";
 };
