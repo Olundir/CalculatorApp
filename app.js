@@ -1,21 +1,20 @@
 const resultObject = document.querySelector(".result");
-const d = document.querySelectorAll(".d");
 
 const keypad = document.querySelectorAll(".key");
-let res = 0;
 for (key of keypad) {
   key.addEventListener("click", (input) => {
     trigger = input.target.textContent;
-    // what if text gets 2 long. For now just limit the input but later I can add the scroll
-    // option for the result screen which would allow for infinite input
-    // if (resultObject.textContent.length === 13) resultObject.classList.add("resultManyNb");
-    // if (resultObject.textContent.length < 13) resultObject.classList.remove("resultManyNb");
+
+    if (resultObject.textContent.length > 10) resultObject.classList.add("resultManyNb");
+    if (resultObject.textContent.length > 18) resultObject.classList.add("resultManyNbNext");
+
+    if (resultObject.textContent.length < 10) resultObject.classList.remove("resultManyNb");
+    if (resultObject.textContent.length < 18) resultObject.classList.remove("resultManyNbNext");
+
     // DEL
     if (trigger === "DEL") deleteLast();
     //RESET
     else if (trigger === "RESET") resetCalculator();
-    // length max
-    // else if (resultObject.textContent.length > 15) console.log("max length");
     // adds the instruction
     else if (trigger === "+" || trigger === "-" || trigger === "x" || trigger === "/") {
       addInstruction();
@@ -75,7 +74,6 @@ const addInstruction = () => {
 const resetCalculator = () => {
   console.log("reset");
   resultObject.innerHTML = "";
-  res = 0;
 };
 
 const deleteLast = () => {
@@ -88,3 +86,33 @@ const addError = () => {
   resultObject.classList.add("error");
   resultObject.innerHTML = "ERROR";
 };
+
+// Theme switch logic thing
+const d = document.querySelectorAll(".d");
+
+// toggle
+// function to determine which toggle is on based on counter? base position is 0?
+// function change toggle to 1
+//          change toggle to 2
+//          change toggle to 3
+// can I put the theme into an object? or "object"
+
+const toggleBackground = document.querySelector(".toggleContainer");
+const toggle = document.querySelector(".toggle");
+let toggleCountAdd = 2;
+let toggleCountRemove = 1;
+
+toggleBackground.addEventListener("click", () => {
+  toggleBackground.classList.remove(`toggleCTheme` + toggleCountRemove);
+  toggleBackground.classList.add(`toggleCTheme` + toggleCountAdd);
+  toggle.classList.remove(`toggleTheme` + toggleCountRemove);
+  toggle.classList.add(`toggleTheme` + toggleCountAdd);
+
+  // change the next toggle
+  if (toggleCountAdd === 3) toggleCountAdd = 1;
+  else toggleCountAdd++;
+  if (toggleCountRemove === 3) toggleCountRemove = 1;
+  else toggleCountRemove++;
+  console.log(toggleCountAdd);
+  console.log(toggleCountRemove);
+});

@@ -14,8 +14,10 @@ body {
   background-color: hsl(222, 26%, 31%);
 }
 .bodyTheme2 {
+  background-color: hsl(0, 0%, 90%);
 }
 .bodyTheme3 {
+  background-color: hsl(268, 75%, 9%);
 }
 
 /* main */
@@ -63,8 +65,8 @@ nav {
   border-radius: 50%;
   position: relative;
   top: 0.3rem;
-  left: 0.4rem;
 }
+
 h2 {
   position: relative;
   top: 2rem;
@@ -79,23 +81,61 @@ h4 {
   background-color: hsl(223, 31%, 20%);
 }
 .toggleCTheme2 {
+  background-color: hsl(0, 5%, 81%);
 }
 .toggleCTheme3 {
+  background-color: hsl(268, 71%, 12%);
 }
 
 .toggleTheme1 {
   background-color: hsl(6, 63%, 50%);
+  left: 0.4rem;
+  animation: moveLeft 0.5s ease-in-out;
 }
 .toggleTheme2 {
+  background-color: hsl(25, 98%, 40%);
+  left: 2rem;
+  animation: moveRight 0.5s ease-in-out;
 }
 .toggleTheme3 {
+  background-color: hsl(176, 100%, 44%);
+  left: 4rem;
+  animation: moveRightTwo 0.5s ease-in-out;
 }
+
+@keyframes moveLeft {
+  0% {
+    left: 4rem;
+  }
+  100% {
+    left: 0.4rem;
+  }
+}
+@keyframes moveRight {
+  0% {
+    left: 0.4rem;
+  }
+  100% {
+    left: 2rem;
+  }
+}
+@keyframes moveRightTwo {
+  0% {
+    left: 2rem;
+  }
+  100% {
+    left: 4rem;
+  }
+}
+
 .navTheme1 {
   color: hsl(0, 0%, 100%);
 }
 .navTheme2 {
+  color: hsl(60, 10%, 19%);
 }
 .navTheme3 {
+  color: hsl(52, 100%, 62%);
 }
 
 /* Theme Switch Animation*/
@@ -107,12 +147,18 @@ h4 {
   border-radius: 1rem;
   margin-bottom: 2rem;
 }
+
 .result {
   padding: 2rem;
+  max-width: 30rem;
 }
 .resultManyNb {
   font-size: 2.7rem;
   line-height: 3.5rem;
+}
+.resultManyNbNext {
+  font-size: 2rem;
+  line-height: 2rem;
 }
 
 .screenTheme1 {
@@ -121,8 +167,11 @@ h4 {
 }
 .screenTheme2 {
   background-color: hsl(0, 0%, 93%);
+  color: hsl(60, 10%, 19%);
 }
 .screenTheme3 {
+  background-color: hsl(268, 71%, 12%);
+  color: hsl(52, 100%, 62%);
 }
 
 /* Keypad */
@@ -143,56 +192,93 @@ h4 {
 /* Tiles that are squares  */
 
 .tile {
-  background-color: hsl(30, 25%, 89%);
   line-height: 6.5rem;
   width: 6rem;
   height: 6rem;
   border-radius: 0.5rem;
   justify-self: center;
   cursor: pointer;
-}
-
-.inner {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
   position: relative;
   z-index: 2;
 }
-.innerDELTheme1 {
+
+.inner {
+  background-color: hsl(30, 25%, 89%);
+}
+.inner2 {
+  background-color: hsl(45, 7%, 89%);
+}
+.inner3 {
+  background-color: hsl(268, 47%, 21%);
+}
+
+.del {
   position: relative;
   z-index: 2;
   color: white;
   font-size: 1.75rem;
   line-height: 6.5rem;
+}
+.innerDELTheme1 {
   background-color: hsl(225, 21%, 49%);
 }
 
-.shadowTheme1 {
+.innerDELTheme2 {
+  background-color: hsl(185, 42%, 37%);
+}
+.innerDELTheme3 {
+  background-color: hsl(281, 89%, 26%);
+}
+.delShadow {
   position: absolute;
-  background-color: hsl(28, 16%, 65%);
   padding-bottom: 0.4rem;
   z-index: 1;
 }
 .shadowDELTheme1 {
-  position: absolute;
   background-color: hsl(224, 28%, 35%);
+}
+.shadowDELTheme2 {
+  background-color: hsl(185, 58%, 25%);
+}
+.shadowDELTheme3 {
+  background-color: hsl(285, 91%, 52%);
+}
+
+.shadowTile {
+  position: absolute;
   padding-bottom: 0.4rem;
   z-index: 1;
+}
+
+.shadowTheme1 {
+  background-color: hsl(28, 16%, 65%);
+}
+.shadowTheme2 {
+  background-color: hsl(35, 11%, 61%);
+}
+.shadowTheme3 {
+  background-color: hsl(290, 70%, 36%);
 }
 
 .keypadTheme1 {
   background-color: hsl(223, 31%, 20%);
   color: hsl(221, 14%, 31%);
 }
-.deleteTheme1 {
-  color: hsl(0, 0%, 100%);
-}
+
 .keypadTheme2 {
+  background-color: hsl(0, 5%, 81%);
+  color: hsl(60, 10%, 19%);
 }
-.deleteTheme2 {
-}
+
 .keypadTheme3 {
+  background-color: hsl(268, 71%, 12%);
+  color: hsl(52, 100%, 62%);
 }
-.deleteTheme3 {
-}
+
 /* Buttons */
 
 .re {
@@ -226,21 +312,51 @@ h4 {
 .reset {
   background-color: hsl(225, 21%, 49%);
 }
+.reset2 {
+  background-color: hsl(185, 42%, 37%);
+}
+.reset3 {
+  background-color: hsl(281, 89%, 26%);
+}
 .equals {
   background-color: hsl(6, 63%, 50%);
 }
+.equals2 {
+  background-color: hsl(25, 98%, 40%);
+}
+.equals3 {
+  background-color: hsl(176, 100%, 44%);
+}
+
+.resetShadow {
+  position: absolute;
+  padding-bottom: 0.4rem;
+  z-index: 1;
+}
 
 .resetShadowTheme1 {
-  position: absolute;
   background-color: hsl(224, 28%, 35%);
+}
+.resetShadowTheme2 {
+  background-color: hsl(185, 58%, 25%);
+}
+.resetShadowTheme3 {
+  background-color: hsl(285, 91%, 52%);
+}
+
+.eqShadow {
+  position: absolute;
   padding-bottom: 0.4rem;
   z-index: 1;
 }
 .equalsShadowTheme1 {
-  position: absolute;
   background-color: hsl(6, 70%, 34%);
-  padding-bottom: 0.4rem;
-  z-index: 1;
+}
+.equalsShadowTheme2 {
+  background-color: hsl(25, 99%, 27%);
+}
+.equalsShadowTheme3 {
+  background-color: hsl(177, 92%, 70%);
 }
 
 /* Attribution */
