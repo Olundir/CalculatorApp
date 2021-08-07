@@ -4,7 +4,7 @@ const keypad = document.querySelectorAll(".key");
 for (key of keypad) {
   key.addEventListener("click", (input) => {
     trigger = input.target.textContent;
-
+    // visuals
     if (resultObject.textContent.length > 10) resultObject.classList.add("resultManyNb");
     if (resultObject.textContent.length > 18) resultObject.classList.add("resultManyNbNext");
 
@@ -87,16 +87,7 @@ const addError = () => {
   resultObject.innerHTML = "ERROR";
 };
 
-// Theme switch logic thing
-const d = document.querySelectorAll(".d");
-
-// toggle
-// function to determine which toggle is on based on counter? base position is 0?
-// function change toggle to 1
-//          change toggle to 2
-//          change toggle to 3
-// can I put the theme into an object? or "object"
-
+// Theme switch logic
 const toggleBackground = document.querySelector(".toggleContainer");
 const toggle = document.querySelector(".toggle");
 const body = document.querySelector(".body");
@@ -114,6 +105,7 @@ const equalsButtonShadow = document.querySelector(".eqShadow");
 
 let toggleCountAdd = 2;
 let toggleCountRemove = 1;
+let currentTheme = 1;
 
 toggleBackground.addEventListener("click", () => {
   toggleBackground.classList.remove(`toggleCTheme` + toggleCountRemove);
@@ -154,6 +146,19 @@ toggleBackground.addEventListener("click", () => {
   else toggleCountAdd++;
   if (toggleCountRemove === 3) toggleCountRemove = 1;
   else toggleCountRemove++;
-  console.log(toggleCountAdd);
-  console.log(toggleCountRemove);
+  if (currentTheme === 3) currentTheme = 1;
+  else currentTheme++;
+  // create local instance of data
+  localStorage.setItem("theme", currentTheme);
 });
+
+// save data to browser
+
+// set the theme with the counter
+// based on the counter -> click that many times?
+const changeTheme = () => {
+  let amount = localStorage.getItem("theme");
+  for (i = amount - 1; i > 0; i--) toggleBackground.click();
+};
+
+changeTheme();
