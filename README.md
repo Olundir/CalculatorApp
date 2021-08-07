@@ -2,7 +2,7 @@
 
 ## To see the live site follow the link below:
 
-https://olundir.github.io/CalculatorApp/ NOT WORKING YET!
+https://olundir.github.io/CalculatorApp/ 
 
 ### Project done as part of the FrontEnd Mentor Challanges
 
