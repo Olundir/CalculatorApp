@@ -206,7 +206,7 @@ h4 {
   z-index: 2;
 }
 
-.inner {
+.inner1 {
   background-color: hsl(30, 25%, 89%);
 }
 .inner2 {
@@ -309,7 +309,7 @@ h4 {
   cursor: pointer;
 }
 
-.reset {
+.reset1 {
   background-color: hsl(225, 21%, 49%);
 }
 .reset2 {
@@ -318,7 +318,7 @@ h4 {
 .reset3 {
   background-color: hsl(281, 89%, 26%);
 }
-.equals {
+.equals1 {
   background-color: hsl(6, 63%, 50%);
 }
 .equals2 {
@@ -326,6 +326,7 @@ h4 {
 }
 .equals3 {
   background-color: hsl(176, 100%, 44%);
+  color: hsl(198, 20%, 13%);
 }
 
 .resetShadow {

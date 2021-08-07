@@ -99,6 +99,19 @@ const d = document.querySelectorAll(".d");
 
 const toggleBackground = document.querySelector(".toggleContainer");
 const toggle = document.querySelector(".toggle");
+const body = document.querySelector(".body");
+const nav = document.querySelector(".nav");
+const screen = document.querySelector(".resultScreenContainer");
+const keypadBg = document.querySelector(".keypad");
+const keys = document.querySelectorAll(".d");
+const keysShadow = document.querySelectorAll(".shadowTile");
+const delKey = document.querySelector(".del");
+const delKeyShadow = document.querySelector(".delShadow");
+const resetButton = document.querySelector(".res");
+const resetButtonShadow = document.querySelector(".resetShadow");
+const equalsButton = document.querySelector(".eql");
+const equalsButtonShadow = document.querySelector(".eqShadow");
+
 let toggleCountAdd = 2;
 let toggleCountRemove = 1;
 
@@ -107,6 +120,34 @@ toggleBackground.addEventListener("click", () => {
   toggleBackground.classList.add(`toggleCTheme` + toggleCountAdd);
   toggle.classList.remove(`toggleTheme` + toggleCountRemove);
   toggle.classList.add(`toggleTheme` + toggleCountAdd);
+  body.classList.remove(`bodyTheme` + toggleCountRemove);
+  body.classList.add(`bodyTheme` + toggleCountAdd);
+  nav.classList.remove(`navTheme` + toggleCountRemove);
+  nav.classList.add(`navTheme` + toggleCountAdd);
+  screen.classList.remove(`screenTheme` + toggleCountRemove);
+  screen.classList.add(`screenTheme` + toggleCountAdd);
+  keypadBg.classList.remove(`keypadTheme` + toggleCountRemove);
+  keypadBg.classList.add(`keypadTheme` + toggleCountAdd);
+  for (k of keys) {
+    k.classList.remove(`inner` + toggleCountRemove);
+    k.classList.add(`inner` + toggleCountAdd);
+  }
+  for (s of keysShadow) {
+    s.classList.remove(`shadowTheme` + toggleCountRemove);
+    s.classList.add(`shadowTheme` + toggleCountAdd);
+  }
+  delKey.classList.remove(`innerDELTheme` + toggleCountRemove);
+  delKey.classList.add(`innerDELTheme` + toggleCountAdd);
+  delKeyShadow.classList.remove(`shadowDELTheme` + toggleCountRemove);
+  delKeyShadow.classList.add(`shadowDELTheme` + toggleCountAdd);
+  resetButton.classList.remove(`reset` + toggleCountRemove);
+  resetButton.classList.add(`reset` + toggleCountAdd);
+  resetButtonShadow.classList.remove(`resetShadowTheme` + toggleCountRemove);
+  resetButtonShadow.classList.add(`resetShadowTheme` + toggleCountAdd);
+  equalsButton.classList.remove(`equals` + toggleCountRemove);
+  equalsButton.classList.add(`equals` + toggleCountAdd);
+  equalsButtonShadow.classList.remove(`equalsShadowTheme` + toggleCountRemove);
+  equalsButtonShadow.classList.add(`equalsShadowTheme` + toggleCountAdd);
 
   // change the next toggle
   if (toggleCountAdd === 3) toggleCountAdd = 1;
